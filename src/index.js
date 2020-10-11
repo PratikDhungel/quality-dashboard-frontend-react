@@ -15,35 +15,16 @@ const BookList = () => {
   </section>)
 }
 
+// Javascript in the JSX file should always return a value. It cannot have a statement
 const Book = () => {
+  const bookTitle = 'Room on the Broom'
+  const bookAuthor = 'Julia Donaldson'
   return (
   <article className='book'>
-    <BookImage/>
-    <BookTitle/>
-    <BookAuthor/>
-  </article>
-  )
-}
-
-const BookImage = () => {
-  return (
     <img src = "https://images-na.ssl-images-amazon.com/images/I/A1XyS0D1S-L._AC_UL200_SR200,200_.jpg"/>
-  )
-}
-
-const BookTitle = () => {
-  return (
-    <h1>
-      Room on the Broom
-    </h1>
-  )
-}
-
-const BookAuthor = () => {
-  return (
-    <h4>
-      Julia Donaldson
-    </h4>
+    <h1>{bookTitle}</h1>
+    <h4>{bookAuthor.toUpperCase()}</h4>
+  </article>
   )
 }
 
