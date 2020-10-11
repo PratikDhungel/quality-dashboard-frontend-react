@@ -1,17 +1,53 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from 'react'
+import ReactDom from 'react-dom'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+// Stateless functional component... Always returns JSX
+const BookList = () => {
+  return (
+  <section>
+    <Book/>
+  </section>)
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const Book = () => {
+  return (
+  <article>
+    <BookImage/>
+    <BookTitle/>
+    <BookAuthor/>
+  </article>
+  )
+}
+
+const BookImage = () => {
+  return (
+    <img src = "https://images-na.ssl-images-amazon.com/images/I/A1XyS0D1S-L._AC_UL200_SR200,200_.jpg"/>
+  )
+}
+
+const BookTitle = () => {
+  return (
+    <h1>
+      Room on the Broom
+    </h1>
+  )
+}
+
+const BookAuthor = () => {
+  return (
+    <h4>
+      Julia Donaldson
+    </h4>
+  )
+}
+
+ReactDom.render(<BookList/>, document.getElementById('root'))
+
+// JSX Rules
+// 1. Always returns a single element
+// 2. HTML semantics... Don't crete a div soup... Return div / section / article or Fragment
+// React.Fragment doesn't create a div... Can be used as <> ... </>
+// 3. Use camelCase for html attributes. E.g. onClick
+// 4. Use className instead of class
+// 5. Close every element. E.g. <img/>
+// 6. Formatting and parenthesis in return
