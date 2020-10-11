@@ -1,34 +1,46 @@
-import React from 'react'
-import ReactDom from 'react-dom'
+import React from 'react';
+import ReactDom from 'react-dom';
 
 // Import CSS
-import './index.css'
+import './index.css';
+
+// Setup Vars
+const firstBook = {
+  imageSrc: 'https://images-na.ssl-images-amazon.com/images/I/A1XyS0D1S-L._AC_UL200_SR200,200_.jpg',
+  bookTitle: 'Room to the Broom',
+  bookAuthor: 'Julia Donaldson'
+};
+
+const secondBook = {
+  imageSrc: 'https://images-na.ssl-images-amazon.com/images/I/71c1LRLBTBL._AC_UL200_SR200,200_.jpg',
+  bookTitle: 'Dog Man: Grime and Punishment: From the Creator of Captain Underpants (Dog Man #9)',
+  bookAuthor: 'Dave Pilkey'
+};
 
 // Stateless functional component... Always returns JSX
 const BookList = () => {
   return (
   <section className='booklist'>
-    <Book/>
-    <Book/>
-    <Book/>
-    <Book/>
-  </section>)
-}
+    <Book imageSrc = {firstBook.imageSrc} bookTitle = {firstBook.bookTitle} bookAuthor = {firstBook.bookAuthor}/>
+    <Book imageSrc = {secondBook.imageSrc} bookTitle = {secondBook.bookTitle} bookAuthor = {secondBook.bookAuthor}/>
+    {/* <Book/> */}
+    {/* <Book/> */}
+  </section>);
+};
 
 // Javascript in the JSX file should always return a value. It cannot have a statement
-const Book = () => {
-  const bookTitle = 'Room on the Broom'
-  const bookAuthor = 'Julia Donaldson'
+const Book = (props) => {
+  console.log(props)
   return (
   <article className='book'>
-    <img src = "https://images-na.ssl-images-amazon.com/images/I/A1XyS0D1S-L._AC_UL200_SR200,200_.jpg"/>
-    <h1>{bookTitle}</h1>
-    <h4>{bookAuthor.toUpperCase()}</h4>
+    <img src = {props.imageSrc}/>
+    <h1>{props.bookTitle}</h1>
+    <h4>{props.bookAuthor}</h4>
   </article>
-  )
-}
+  );
+};
 
-ReactDom.render(<BookList/>, document.getElementById('root'))
+ReactDom.render(<BookList/>, document.getElementById('root'));
 
 // JSX Rules
 // 1. Always returns a single element
