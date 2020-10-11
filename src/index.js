@@ -1,17 +1,23 @@
 import React from 'react'
 import ReactDom from 'react-dom'
 
+// Import CSS
+import './index.css'
+
 // Stateless functional component... Always returns JSX
 const BookList = () => {
   return (
-  <section>
+  <section className='booklist'>
+    <Book/>
+    <Book/>
+    <Book/>
     <Book/>
   </section>)
 }
 
 const Book = () => {
   return (
-  <article>
+  <article className='book'>
     <BookImage/>
     <BookTitle/>
     <BookAuthor/>
