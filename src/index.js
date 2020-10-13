@@ -7,11 +7,13 @@ import './index.css';
 // Setup Vars
 const books = [
   {
+    id: 1,
     imageSrc: 'https://images-na.ssl-images-amazon.com/images/I/A1XyS0D1S-L._AC_UL200_SR200,200_.jpg',
     bookTitle: 'Room to the Broom',
     bookAuthor: 'Julia Donaldson'
   },
   {
+    id: 2,
     imageSrc: 'https://images-na.ssl-images-amazon.com/images/I/71c1LRLBTBL._AC_UL200_SR200,200_.jpg',
     bookTitle: 'Dog Man: Grime and Punishment: From the Creator of Captain Underpants (Dog Man #9)',
     bookAuthor: 'Dave Pilkey'
@@ -23,14 +25,14 @@ const BookList = () => {
   return (
   <section className='booklist'>
     {books.map((book) =>{
-      return <Book book = {book}></Book>; 
+      return <Book key = {book.id} {... book}></Book>; 
     })}
   </section>);
 };
 
 // Javascript in the JSX file should always return a value. It cannot have a statement
 const Book = (props) => {
-  const {imageSrc, bookTitle, bookAuthor} = props.book
+  const {imageSrc, bookTitle, bookAuthor} = props;
   return (
   <article className='book'>
     <img src = {imageSrc}/>
