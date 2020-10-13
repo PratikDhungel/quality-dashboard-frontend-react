@@ -21,7 +21,9 @@ const secondBook = {
 const BookList = () => {
   return (
   <section className='booklist'>
-    <Book imageSrc = {firstBook.imageSrc} bookTitle = {firstBook.bookTitle} bookAuthor = {firstBook.bookAuthor}/>
+    <Book imageSrc = {firstBook.imageSrc} bookTitle = {firstBook.bookTitle} bookAuthor = {firstBook.bookAuthor}>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione deserunt facere commodi ipsam ullam, voluptate aliquam nam eius error necessitatibus.</p>
+    </Book>
     <Book imageSrc = {secondBook.imageSrc} bookTitle = {secondBook.bookTitle} bookAuthor = {secondBook.bookAuthor}/>
     {/* <Book/> */}
     {/* <Book/> */}
@@ -30,12 +32,13 @@ const BookList = () => {
 
 // Javascript in the JSX file should always return a value. It cannot have a statement
 const Book = (props) => {
-  console.log(props)
+  const {imageSrc, bookTitle, bookAuthor, children} = props
   return (
   <article className='book'>
-    <img src = {props.imageSrc}/>
-    <h1>{props.bookTitle}</h1>
-    <h4>{props.bookAuthor}</h4>
+    <img src = {imageSrc}/>
+    <h1>{bookTitle}</h1>
+    <h4>{bookAuthor}</h4>
+    {children}
   </article>
   );
 };
