@@ -45,3 +45,11 @@ body {
 .book p {
   margin-top: 0.5rem;
 }
+
+.book button {
+  margin-top: 0.5em;
+  padding: 0.5em;
+  background-color: #fff;
+  border: 1px solid black;
+  outline: none;
+}
